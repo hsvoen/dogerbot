@@ -33,5 +33,5 @@ class ThoughtForTheDay:
 
 
 if __name__ == '__main__':
-    Thought = ThoughtForTht:eDay()
+    Thought = ThoughtForTheDay()
     print("Thought of the day:", Thought.getThought())
