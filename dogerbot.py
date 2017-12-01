@@ -3,8 +3,12 @@ import discord
 import asyncio
 import re
 import random
+import thought
 
 client = discord.Client()
+
+Thoughts = thought.ThoughtOfTheDay()
+
 
 murder_response = ["I too can appreciate a good killing", "Why stopp there? I think we can go further." , "Just do it." , "Did someone mention murder? Count me in!", "I'm gonna call the police!", "That's a whipping!", "Why am I never included when you do fun stuff?"]
 
@@ -47,7 +51,8 @@ async def on_message(message):
         await client.send_message(message.channel, 'Doger will respond to: !test, !sleep and any mention of space or murder')
     elif kill:
         await client.send_message(message.channel, random.choice(murder_response))
-
+    elif message.content.startswith('!thought'):
+        await client.send_message(message.channel, 'Thought for the day: ' + Thoughts.getThought())
 
 client.run(DOGER_TOKEN)
 
