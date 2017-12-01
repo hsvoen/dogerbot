@@ -7,7 +7,7 @@ import thought
 
 client = discord.Client()
 
-Thoughts = thought.ThoughtOfTheDay()
+Thoughts = thought.ThoughtForTheDay()
 
 
 murder_response = ["I too can appreciate a good killing", "Why stopp there? I think we can go further." , "Just do it." , "Did someone mention murder? Count me in!", "I'm gonna call the police!", "That's a whipping!", "Why am I never included when you do fun stuff?"]

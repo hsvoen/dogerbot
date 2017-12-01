@@ -1,7 +1,7 @@
 import random 
 
 
-class ThoughtsOfTheDay:
+class ThoughtForTheDay:
     ''' A class for reading thoughts of the day from file, storing them, and retrieving a random or non-random
     thought at demand.
 
@@ -33,5 +33,5 @@ class ThoughtsOfTheDay:
 
 
 if __name__ == '__main__':
-    Thoughts = ThoughtsOfTheDay()
-    print("Thought of the day:", Thoughts.getThought())
+    Thought = ThoughtForTht:eDay()
+    print("Thought of the day:", Thought.getThought())
