@@ -4,15 +4,19 @@ import asyncio
 import re
 import random
 import thought
+import time
 
 client = discord.Client()
 
 Thoughts = thought.ThoughtForTheDay()
-
+time_last_thought = time.struct_time
 
 murder_response = ["I too can appreciate a good killing", "Why stopp there? I think we can go further." , "Just do it." , "Did someone mention murder? Count me in!", "I'm gonna call the police!", "That's a whipping!", "Why am I never included when you do fun stuff?"]
 
 DOGER_TOKEN =os.environ.get('DOGER_BOT_TOKEN')
+
+def post_thought():
+    
 
 @client.event
 async def on_ready():
