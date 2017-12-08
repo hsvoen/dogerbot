@@ -46,7 +46,7 @@ async def on_message(message):
         await client.send_message(message.channel, 'Done sleeping')
     elif (message.content.find("dodger") >=0):
         await client.send_message(message.channel, 'Dodger Dodger best i test')
-    elif re.search("sp.+ce",message.content.lower()): #Reacts to space
+    elif find_magnus(message): 
         for server in client.servers:
             for emoji in server.emojis:
                 if (emoji.name == "magnus"):
@@ -58,5 +58,17 @@ async def on_message(message):
     elif message.content.startswith('!thought'):
         await client.send_message(message.channel, 'Thought for the day: ' + Thoughts.getThought())
 
-client.run(DOGER_TOKEN)
+
+def find_magnus(message):
+    ''' Search a message for any trace of magnusyness. 
+        Returns true if the message is confirmed of having been sent by magnus, false otherwise
+    '''
+    if re.search("sp.+?ce|elon musk|rocket|tesla|new space conspiracy|artificial intelligence|coffe|complexity|hard sci-fi|anti-authoritarian|anarchist|nanofabricator|mars|minion|puppet|democracy.+?failed|moonbase|hex based|capitalism.+?doesn't work|capitalism.+?failed|capitalist|cynicism|hero system|complex|",message.content.lower()): #Reacts to space
+        return True
+    else
+        return False
+
+
+if __name__ == '__main__':
+    client.run(DOGER_TOKEN)
 
