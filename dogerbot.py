@@ -15,7 +15,7 @@ murder_response = ["I too can appreciate a good killing", "Why stopp there? I th
 
 DOGER_TOKEN =os.environ.get('DOGER_BOT_TOKEN')
 
-def post_thought():
+#def post_thought():
     
 
 @client.event
@@ -65,7 +65,7 @@ def find_magnus(message):
     '''
     if re.search("sp.+?ce|elon musk|rocket|tesla|new space conspiracy|artificial intelligence|coffe|complexity|hard sci-fi|anti-authoritarian|anarchist|nanofabricator|mars|minion|puppet|democracy.+?failed|moonbase|hex based|capitalism.+?doesn't work|capitalism.+?failed|capitalist|cynicism|hero system|complex|",message.content.lower()): #Reacts to space
         return True
-    else
+    else:
         return False
 
 
