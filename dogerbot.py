@@ -63,7 +63,7 @@ def find_magnus(message):
     ''' Search a message for any trace of magnusyness. 
         Returns true if the message is confirmed of having been sent by magnus, false otherwise
     '''
-    if re.search("sp.+?ce|elon musk|rocket|tesla|new space conspiracy|artificial intelligence|coffe|complexity|hard sci-fi|anti-authoritarian|anarchist|nanofabricator|mars|minion|puppet|democracy.+?failed|moonbase|hex based|capitalism.+?doesn't work|capitalism.+?failed|capitalist|cynicism|hero system|complex|",message.content.lower()): #Reacts to space
+    if re.search("sp.+?ce|elon musk|rocket|tesla|new space conspiracy|artificial intelligence|coffe|complexity|hard sci-fi|anti-authoritarian|anarchist|nanofabricator|mars|minion|puppet|democracy.+?failed|moonbase|hex based|capitalism.+?doesn't work|capitalism.+?failed|capitalist|cynicism|hero system|complex",message.content.lower()): #Reacts to space
         return True
     else:
         return False
