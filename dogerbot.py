@@ -4,19 +4,27 @@ import asyncio
 import re
 import random
 import thought
-import time
+import alarm
 
 client = discord.Client()
 
 Thoughts = thought.ThoughtForTheDay()
 time_last_thought = time.struct_time
 
+
 murder_response = ["I too can appreciate a good killing", "Why stopp there? I think we can go further." , "Just do it." , "Did someone mention murder? Count me in!", "I'm gonna call the police!", "That's a whipping!", "Why am I never included when you do fun stuff?"]
 
 DOGER_TOKEN =os.environ.get('DOGER_BOT_TOKEN')
 
-#def post_thought():
-    
+async def alarm_task():
+    await client.wait_until_ready()
+    alarm = alarm.AlarmClock()
+    alarm.set_alarm(0,9,0,True, lambda: client.send('328915119247458314', 'Thought for the day: ' + Thoughts.getThought()))
+    #channel = discord.Object(id='328915119247458314')
+
+    while not client.is_close:
+        await alarm.check_alarms()
+        await asyncio.sleep(60)
 
 @client.event
 async def on_ready():
@@ -70,5 +78,6 @@ def find_magnus(message):
 
 
 if __name__ == '__main__':
+    client.loop.create_task(alarm_task())
     client.run(DOGER_TOKEN)
 
